@@ -1,14 +1,23 @@
 //Script for the ascii background effect
 
-let word = "+";
+let word = "+"
 
-let sizeX = Math.floor(window.innerWidth / 18); //18 px each character (including space)
-let sizeY = Math.floor(window.innerHeight / 17); //17 px each line scape
+let sizeX = Math.floor(window.innerWidth / 18) //18 px each character (including space)
+let sizeY = Math.floor(window.innerHeight / 17) //17 px each line scape
 
-let surface = new Array(sizeY).fill(0).map(() => new Array(sizeX+1).fill(0)); //surface to draw the background
+let surface = new Array(sizeY).fill(0).map(() => new Array(sizeX + 1).fill(0)) //surface to draw the background
 
-let targetX = Math.floor(Math.random() * sizeX);
-let targetY = Math.floor(Math.random() * sizeY);
+let posX = 10
+let posY = 10
+
+let targetX
+let targetY
+
+let lastMoveTime = 0;
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function root() { //root function to start the background matrix
     for (let i = 0; i < sizeY; i++) {
@@ -24,34 +33,97 @@ function root() { //root function to start the background matrix
 
 function printBackground() {
     let background = document.getElementById("background-effect");
-    let surfaceString = "";
+    let surfaceString = ""
     for (let i = 0; i < sizeY; i++) {
-        for (let j = 0; j < sizeX+1; j++) {
+        for (let j = 0; j < sizeX + 1; j++) {
             surfaceString += surface[i][j];
         }
     }
-    background.innerHTML = surfaceString;
+    background.innerHTML = surfaceString
 }
 
-function colorChanger(posY, posX) {
-    let background = document.getElementById("background-effect");
+function colorChanger(newPosY, newPosX) {
+    let background = document.getElementById("background-effect")
+    //Manage the input of the position
+    if (newPosX < 2) {
+        newPosX = 2
+    }
+    if (newPosX > sizeX - 3) {
+        newPosX = sizeX - 3
+    }
+
+    if (newPosY < 2) {
+        newPosY = 2
+    }
+    if (newPosY > sizeY - 3) {
+        newPosY = sizeY - 3
+    }
+
+    //reset the color of the previous position
+    for (let i = 0; i < sizeY; i++) {
+        for (let j = 0; j < sizeX; j++) {
+            if (i === posY && j === posX) {
+                surface[i][j + 1] = word + " "
+                surface[i][j - 1] = word + " "
+                surface[i + 1][j] = word + " "
+                surface[i - 1][j] = word + " "
+                surface[i + 1][j + 1] = word + " "
+                surface[i - 1][j - 1] = word + " "
+                surface[i + 1][j - 1] = word + " "
+                surface[i - 1][j + 1] = word + " "
+
+            }
+        }
+    }
+
+    posX = newPosX
+    posY = newPosY
 
     for (let i = 0; i < sizeY; i++) {
         for (let j = 0; j < sizeX; j++) {
-            // Verificar si estamos en la posición específica
-            if (i === posY && j === posX) {
-                surface[i][j] = `<span style="color: white;">${word}</span> `;
+            if (i === newPosY && j === newPosX) {
+                //Draw a circle around the mouse position
+                surface[i][j + 1] = `<span style="color: white;">${word}</span> `
+                surface[i][j - 1] = `<span style="color: white;">${word}</span> `
+                surface[i + 1][j] = `<span style="color: white;">${word}</span> `
+                surface[i - 1][j] = `<span style="color: white;">${word}</span> `
+                surface[i + 1][j + 1] = `<span style="color: white;">${word}</span> `
+                surface[i - 1][j - 1] = `<span style="color: white;">${word}</span> `
+                surface[i + 1][j - 1] = `<span style="color: white;">${word}</span> `
+                surface[i - 1][j + 1] = `<span style="color: white;">${word}</span> `
+
+                let clac = document.getElementById("clac")
+                clac.volume = 0.02
+
+                const currentTime = Date.now();
+
+                if (currentTime - lastMoveTime > 40) {
+                    lastMoveTime = currentTime;
+                    clac.currentTime = 0
+                    clac.play()
+                }
+
             }
         }
     }
 }
 
-root();
-colorChanger(targetY, targetX);
-printBackground();
+root()
+colorChanger(targetY, targetX)
+printBackground()
 
 window.addEventListener("resize", function () {
-    sizeX = Math.floor(window.innerWidth / 18);
-    sizeY = Math.floor(window.innerHeight / 17);
-    printBackground();
+    sizeX = Math.floor(window.innerWidth / 18)
+    sizeY = Math.floor(window.innerHeight / 17)
+    root()
+    printBackground()
+});
+
+//Manage the focus of the window
+
+window.addEventListener("mousemove", function (event) {
+    targetX = Math.floor(event.clientX / 18)
+    targetY = Math.floor(event.clientY / 17)
+    colorChanger(targetY, targetX)
+    printBackground()
 });

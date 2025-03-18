@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'SquareFont';
+    src: url('../fonts/nothing.ttf') format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -13,8 +18,73 @@ html {
   
 
 #background-effect{
-    color: rgba(219, 173, 250, 0.616);
-    text-shadow: 10px 1px 10px rgb(219, 173, 250);
+    color: rgba(95, 94, 95, 0.61);
+    text-shadow: 10px 1px 10px rgba(178, 107, 224, 0.918);
     font-size: 0.75rem;
     font-weight: bold;
+    text-rendering: optimizeSpeed;
+    z-index: -1;
+    user-select: none;
+}
+
+.header-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    top: 3vh;  
+    width: 90%;
+    height: 10vh;
+    margin: auto auto;
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 1rem;
+    background-color: transparent;
+    text-rendering: optimizeLegibility;
+    font-family: "SquareFont";
+    margin-left: 2%;
+    font-weight: lighter;
+    transition: color 1s ease, text-shadow 1s ease;
+}
+
+.title:hover {
+    color: rgb(157, 255, 0);
+    text-shadow: 1px 1px 5px rgb(157, 255, 0);
+    cursor: pointer;
+}
+
+.route{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 2rem;
+    background-color: transparent;
+    text-rendering: optimizeLegibility;
+    font-family: "SquareFont";
+    margin-left: 2%;
+    font-weight: lighter;
+    transition: color 1s ease, text-shadow 1s ease;
+}
+
+.route:hover {
+    color: rgb(255, 0, 119);
+    text-shadow: 1px 1px 5px rgb(255, 0, 119);
+    cursor: pointer;
 }
