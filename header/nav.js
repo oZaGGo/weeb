@@ -51,3 +51,42 @@ document.addEventListener("mousemove", async function socialBoard(event) {
     }
 
 })
+
+
+//Routes
+
+function loadPage(event, page) {
+    event.preventDefault(); // Evita que el navegador recargue la página
+
+    fetch(page) // Cargar la nueva página
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("content").innerHTML = "";
+            document.getElementById("content").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar la página:", error));
+}
+
+let route4 = document.getElementById("route4")
+
+route4.addEventListener("click", function () {
+    loadPage(event, "./routes/route4/index.html");
+})
+
+let route3 = document.getElementById("route3")
+
+route3.addEventListener("click", function () {
+    loadPage(event, "./routes/route3/index.html");
+})
+
+let route2 = document.getElementById("route2")
+
+route2.addEventListener("click", function () {
+    loadPage(event, "./routes/route2/index.html");
+})
+
+let route1 = document.getElementById("route1")
+
+route1.addEventListener("click", function () {
+    loadPage(event, "./routes/route1/index.html");
+})
