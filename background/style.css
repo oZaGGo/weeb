@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+html {
+    font-size: 20px;
+}
+  
+
+#background-effect{
+    color: rgba(219, 173, 250, 0.616);
+    text-shadow: 10px 1px 10px rgb(219, 173, 250);
+    font-size: 0.75rem;
+    font-weight: bold;
+}
