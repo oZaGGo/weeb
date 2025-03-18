@@ -76,17 +76,17 @@ route4.addEventListener("click", function () {
 let route3 = document.getElementById("route3")
 
 route3.addEventListener("click", function () {
-    loadPage(event, "./routes/route3/index.html");
+    loadPage(event, "../routes/route3/index.html");
 })
 
 let route2 = document.getElementById("route2")
 
 route2.addEventListener("click", function () {
-    loadPage(event, "./routes/route2/index.html");
+    loadPage(event, "../routes/route2/index.html");
 })
 
 let route1 = document.getElementById("route1")
 
 route1.addEventListener("click", function () {
-    loadPage(event, "./routes/route1/index.html");
+    loadPage(event, "../routes/route1/index.html");
 })
