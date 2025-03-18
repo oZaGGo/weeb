@@ -18,16 +18,18 @@ document.addEventListener("mousemove", async function socialBoard(event) {
 
     if (event.clientY > yPart * 12) {
 
-        await wait(200)
-        let social = document.getElementById("social")
-        social.style.display = "none"
+        if (!animated) {
+            await wait(200)
+            let social = document.getElementById("social")
+            social.style.display = "none"
 
-        let socialBoard = document.getElementById("socialBoard")
-        socialBoard.style.display = "flex"
-        socialBoard.classList.add("socialBoardMove")
-        await wait(1500)
-        socialBoard.style.opacity = "1"
-        animated = true
+            let socialBoard = document.getElementById("socialBoard")
+            socialBoard.style.display = "flex"
+            socialBoard.classList.add("socialBoardMove")
+            await wait(1500)
+            socialBoard.style.opacity = "1"
+            animated = true
+        }
 
     } else {
         if (animated) {
