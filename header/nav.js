@@ -70,7 +70,7 @@ function loadPage(event, page) {
 let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", function () {
-    loadPage(event, "./routes/route4/index.html");
+    loadPage(event, "../routes/route4/index.html");
 })
 
 let route3 = document.getElementById("route3")
