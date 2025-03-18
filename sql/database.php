@@ -25,16 +25,22 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $apikey = $row['apikey']; // Extraer el valor del `apikey`
 
-    echo json_encode(['apikey' => $apikey]); // Devolver el valor del `apikey` como un objeto JSON
-} else {
-    echo json_encode(['error' => 'No se encontró el valor de apikey.']);
+    // Abrir el archivo para escribir (o crear uno nuevo si no existe)
+    $file = fopen("apikey.txt", "w"); // Esto abre (o crea) el archivo 'apikey.txt' en modo escritura
+
+    if ($file) {
+        // Escribir el valor de apikey en el archivo de texto
+        fwrite($file, $apikey); // Escribe el contenido en el archivo
+
+        // Cerrar el archivo
+        fclose($file);
+
+        echo "El valor de la API key ha sido escrito en el archivo 'apikey.txt'.";
+    } else {
+        echo "Hubo un error al intentar abrir el archivo.";
+    }
 }
 
 // Cerrar la conexión
 $conn->close();
 ?>
-
-<div id="apikey">
-    <?php echo $apikey; ?>
-</div>
-<script src="OpenaiCon.js"></script>
