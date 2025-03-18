@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Definir la consulta para obtener el valor de la columna `apikey`
-$sql = "SELECT apikey FROM tabla WHERE id = 1"; // Asegúrate de reemplazar "tabla" con el nombre de tu tabla y usar un identificador adecuado
+$sql = "SELECT apikey FROM openai"; // Asegúrate de reemplazar "tabla" con el nombre de tu tabla y usar un identificador adecuado
 
 // Ejecutar la consulta
 $result = $conn->query($sql);
@@ -24,12 +24,17 @@ if ($result->num_rows > 0) {
     // Recuperar el valor de la columna `apikey`
     $row = $result->fetch_assoc();
     $apikey = $row['apikey']; // Extraer el valor del `apikey`
-    
+
     echo json_encode(['apikey' => $apikey]); // Devolver el valor del `apikey` como un objeto JSON
 } else {
-    echo "No se encontró el valor del apikey.";
+    echo json_encode(['error' => 'No se encontró el valor de apikey.']);
 }
 
 // Cerrar la conexión
 $conn->close();
 ?>
+
+<div id="apikey">
+    <?php echo $apikey; ?>
+</div>
+<script src="OpenaiCon.js"></script>
