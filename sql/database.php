@@ -20,6 +20,8 @@ $row = $result->fetch_assoc();
 
 $apikey = $row["apikey"];
 
+echo json_encode(array("apikey" => $apikey));
+
 // Cerrar la conexión
 mysqli_close($conn);
 
