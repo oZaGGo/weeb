@@ -3,7 +3,7 @@
     src: url('fonts/nothing.ttf') format('truetype');
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,9 +15,9 @@
 html {
     font-size: 20px;
 }
-  
 
-#background-effect{
+
+#background-effect {
     display: block;
     position: absolute;
     color: rgba(95, 94, 95, 0.61);
@@ -29,24 +29,23 @@ html {
     user-select: none;
 }
 
-.header-container{
+.header-container {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
 }
 
 .header {
     position: fixed;
     display: flex;
-    top: 3vh;  
-    width: 90%;
+    top: 3vh;
+    width: 70%;
     height: 10vh;
     margin: auto auto;
-    background-color: rgba(255, 255, 255, 0.13);
-    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur(3px);
     border-radius: 10px;
     z-index: 1;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -72,7 +71,7 @@ html {
     cursor: pointer;
 }
 
-.route{
+.route {
     font-size: 1rem;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -92,7 +91,7 @@ html {
     cursor: pointer;
 }
 
-.githubAvatar{
+.githubAvatar {
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid rgba(255, 253, 253, 0.712);
@@ -109,7 +108,7 @@ html {
     cursor: pointer;
 }
 
-.volumeB{
+.volumeB {
     position: absolute;
     color: rgb(255, 255, 255);
     background-color: transparent;
@@ -118,17 +117,111 @@ html {
     margin-left: 5vh;
 }
 
-.volumeB:hover{
+.volumeB:hover {
     color: rgb(255, 0, 119);
     cursor: pointer;
 }
 
-.volumeUpIcon{
+.volumeUpIcon {
     background-color: transparent;
 }
 
-.volumeMuteIcon{
+.volumeMuteIcon {
     display: none;
     background-color: transparent;
     color: rgb(255, 0, 119);
+}
+
+.social {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: transparent;
+    text-shadow: rgb(255, 255, 255);
+    background-color: transparent;
+    z-index: 3;
+    margin-top: 90vh;
+    margin-left: 90vh;
+}
+
+.socialM{
+    background-color: transparent;
+    animation: fadeText 1s infinite alternate ease-in-out;
+    animation-delay: 0;
+}
+
+.v1{
+    background-color: transparent;
+    animation: fadeText 1s infinite alternate ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.v2{
+    background-color: transparent;
+    animation: fadeText 1s infinite alternate ease-in-out;
+    animation-delay: 1s;
+}
+
+@keyframes fadeText {
+    0% {
+        color: rgb(255, 0, 119);
+    }
+    100% {
+        color: transparent;
+    }
+}
+
+.socialBoard{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    background-color: rgb(255, 0, 119);
+    width: 150px;
+    border-radius: 6px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 90vh;
+    margin-left: 90vh;
+    z-index: 4;
+    opacity: 0;
+}
+
+.socialBoard a{
+    background-color: transparent;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.socialBoardMove{
+    animation: moveUpSocial 1.5s ease;
+}
+
+.socialBoardDown{
+    animation: moveDownSocial 1.5s ease;
+}
+
+@keyframes moveUpSocial{
+    0%{
+        margin-top: 96vh;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 90vh;
+        opacity: 1;
+    }
+}
+
+@keyframes moveDownSocial{
+    0%{
+        margin-top: 90vh;
+        opacity: 1;
+    }
+    100%{
+        margin-top: 96vh;
+        opacity: 0;
+    }
 }

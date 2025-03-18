@@ -77,11 +77,6 @@ function colorChanger(newPosY, newPosX) {
                 surface[i][j - 1] = word + " "
                 surface[i + 1][j] = word + " "
                 surface[i - 1][j] = word + " "
-                surface[i + 1][j + 1] = word + " "
-                surface[i - 1][j - 1] = word + " "
-                surface[i + 1][j - 1] = word + " "
-                surface[i - 1][j + 1] = word + " "
-
             }
         }
     }
@@ -97,14 +92,10 @@ function colorChanger(newPosY, newPosX) {
                 surface[i][j - 1] = `<span style="color: white;">${word}</span> `
                 surface[i + 1][j] = `<span style="color: white;">${word}</span> `
                 surface[i - 1][j] = `<span style="color: white;">${word}</span> `
-                surface[i + 1][j + 1] = `<span style="color: white;">${word}</span> `
-                surface[i - 1][j - 1] = `<span style="color: white;">${word}</span> `
-                surface[i + 1][j - 1] = `<span style="color: white;">${word}</span> `
-                surface[i - 1][j + 1] = `<span style="color: white;">${word}</span> `
 
                 const currentTime = Date.now();
 
-                if (currentTime - lastMoveTime > 300) {
+                if (currentTime - lastMoveTime > 135) {
                     lastMoveTime = currentTime;
                     clac.currentTime = 0
                     clac.play()
