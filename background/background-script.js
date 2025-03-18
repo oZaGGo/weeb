@@ -15,6 +15,13 @@ let targetY
 
 let lastMoveTime = 0;
 
+let clac = document.getElementById("clac")
+clac.volume = 0.4
+
+let rainAudio = document.getElementById("rain")
+rainAudio.loop = true
+rainAudio.volume = 0.03
+
 function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -44,6 +51,9 @@ function printBackground() {
 
 function colorChanger(newPosY, newPosX) {
     let background = document.getElementById("background-effect")
+    if (posX === newPosX && posY === newPosY) {
+        return;
+    }
     //Manage the input of the position
     if (newPosX < 2) {
         newPosX = 2
@@ -92,12 +102,9 @@ function colorChanger(newPosY, newPosX) {
                 surface[i + 1][j - 1] = `<span style="color: white;">${word}</span> `
                 surface[i - 1][j + 1] = `<span style="color: white;">${word}</span> `
 
-                let clac = document.getElementById("clac")
-                clac.volume = 0.02
-
                 const currentTime = Date.now();
 
-                if (currentTime - lastMoveTime > 40) {
+                if (currentTime - lastMoveTime > 300) {
                     lastMoveTime = currentTime;
                     clac.currentTime = 0
                     clac.play()
@@ -117,7 +124,7 @@ window.addEventListener("resize", function () {
     sizeY = Math.floor(window.innerHeight / 17)
     root()
     printBackground()
-});
+})
 
 //Manage the focus of the window
 
@@ -126,4 +133,5 @@ window.addEventListener("mousemove", function (event) {
     targetY = Math.floor(event.clientY / 17)
     colorChanger(targetY, targetX)
     printBackground()
-});
+    rainAudio.play()
+})
