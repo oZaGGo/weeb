@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 // Realizar la consulta
-$sql = "SELECT apikey FROM openai"; // El nombre de la tabla es 'openai' y la columna es 'apikey'
+$sql = "SELECT apikey FROM openai LIMIT 1"; // El nombre de la tabla es 'openai' y la columna es 'apikey'
 $result = mysqli_query($conn, $sql);
 
 // Verificar si hay resultados
