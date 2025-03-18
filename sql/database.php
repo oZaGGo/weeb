@@ -16,18 +16,22 @@ if (!$conn) {
 $sql = "SELECT apikey FROM openai LIMIT 1"; // El nombre de la tabla es 'openai' y la columna es 'apikey'
 $result = mysqli_query($conn, $sql);
 
-// Verificar si hay resultados
-if (mysqli_num_rows($result) > 0) {
-    // Mostrar los valores
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "API Key: " . $row["apikey"] . "<br>";
-    }
-} else {
-    echo "No se encontraron resultados";
-}
+$row = $result->fetch_assoc();
+
+$apikey = $row["apikey"];
 
 // Cerrar la conexión
 mysqli_close($conn);
 
 echo "Conexión exitosa!";
 ?>
+
+<script>
+    // PHP nos inyecta el valor de $apikey directamente en JavaScript
+    var apiKey = "<?php echo $apikey; ?>";
+
+    // Imprimir el valor en la consola de JavaScript
+    console.log("La API Key es:", apiKey);
+
+    // Ahora puedes usar la variable apiKey en tu código JS
+</script>
