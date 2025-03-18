@@ -1,5 +1,3 @@
-const apiKey = "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"; // 🔴 Reemplaza con tu API Key real
-
 async function getCompletion(message) {
     try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
