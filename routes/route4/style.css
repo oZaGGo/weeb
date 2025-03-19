@@ -1,6 +1,119 @@
-.block{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
+@font-face {
+    font-family: 'SquareFont';
+    src: url('../../fonts/nothing.ttf') format('truetype');
 }
+
+
+.chat{
+    width: 70vw;
+    height: 70vh;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.075);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    margin-top: 15vh;
+    margin-left: 31vh;
+    animation: fadeIn 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: end;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.input-container{
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+#inputBlock{
+    background-color: transparent;
+    display: flex;
+    width: 70vw;
+    height: 70vh;
+    z-index: 2;
+    position: absolute;
+    margin-top: 15vh;
+    margin-left: 31vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    animation: fadeIn 1s ease;
+}
+
+#chatInput{
+    background-color: rgba(0, 0, 0, 0.714);
+    width: 90%;
+    border: 1px solid rgba(47, 46, 47, 0.367);
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+    font-family: "SquareFont";
+    color: white;
+}
+
+#sendButton{
+    background-color: rgba(255, 0, 119, 0.419);
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: white;
+    font-family: "SquareFont";
+    margin: 1;
+}
+
+.bubbles{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    background-color: transparent;
+    margin-bottom: 8vh;
+    overflow: auto;
+}
+
+.bubble{
+    background-color: rgba(0, 0, 0, 0.714);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    font-family: "SquareFont";
+    color: white;
+    font-size: 1rem;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+
+.bubbleIa{
+    background-color: rgb(255, 0, 119);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    font-family: "SquareFont";
+    color: white;
+    font-size: 1rem;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+

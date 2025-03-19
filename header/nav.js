@@ -57,7 +57,7 @@ document.addEventListener("mousemove", async function socialBoard(event) {
 
 let route4 = document.getElementById("route4")
 
-route4.addEventListener("click", function () {
+route4.addEventListener("click", async function () {
     fetch('../sql/key.php')
         .then(response => response.text())
         .then(data => {
@@ -68,7 +68,17 @@ route4.addEventListener("click", function () {
             console.error("Hubo un error al obtener la API key:", error);
         });
 
-    loadPage(event, "./routes/route4/index.html");
+    await loadPage(event, "./routes/route4/index.html");
+
+    //Import javascript
+    const importJs = await import("/routes/route4/chat.js");
+    importJs.chat();
+
+    let bubbles = document.getElementById("bubbles")
+
+    let sendButton = document.getElementById('sendButton');
+
+    route4.style = "color: rgb(255, 0, 119) !important;"
 })
 
 let route3 = document.getElementById("route3")
