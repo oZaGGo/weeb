@@ -1,7 +1,3 @@
-<!-- Audio -->
-<audio id="clac" src="audio/sounds/low_clac3.wav"></audio>
-<audio id="rain" src="audio/background-sounds/rain.wav"></audio>
-
 <!-- Background effect -->
 <pre id="background-effect"></pre>
 

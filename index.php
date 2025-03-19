@@ -11,6 +11,10 @@
 
 <body>
 
+    <!-- Audio -->
+    <audio id="clac" src="audio/sounds/low_clac3.wav"></audio>
+    <audio id="rain" src="audio/background-sounds/rain.wav"></audio>
+
     <?php include 'background/background.php'; ?>
 
     <?php include 'header/header.php'; ?>
