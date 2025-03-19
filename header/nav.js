@@ -55,36 +55,19 @@ document.addEventListener("mousemove", async function socialBoard(event) {
 
 //Routes
 
-function loadPage(event, page) {
-    event.preventDefault();
-
-    fetch('../sql/key.php') // Llamamos al archivo PHP que devuelve la API key
-        .then(response => response.text())
-        .then(data => {
-            // Almacenamos el valor de la API key en una variable JS
-            var apiKey = data;
-
-            // Imprimimos el valor de la API key en la consola (o haz lo que necesites con él)
-            console.log("API Key:", apiKey);
-
-            // Aquí podrías utilizar la API Key en tu lógica JavaScript
-        })
-        .catch(error => {
-            console.error("Hubo un error al obtener la API key:", error);
-        });// Evita que el navegador recargue la página
-
-    fetch(page) // Cargar la nueva página
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("content").innerHTML = "";
-            document.getElementById("content").innerHTML = data;
-        })
-        .catch(error => console.error("Error al cargar la página:", error));
-}
-
 let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", function () {
+    fetch('../sql/key.php')
+        .then(response => response.text())
+        .then(data => {
+            apiKey = data;
+            console.log("API Key:", apiKey);
+        })
+        .catch(error => {
+            console.error("Hubo un error al obtener la API key:", error);
+        });
+
     loadPage(event, "./routes/route4/index.html");
 })
 
