@@ -67,12 +67,14 @@ route4.addEventListener("click", async function (event) {
             loadPage(event, "./routes/route4/index.html")
 
             route4.style = "color: rgb(255, 0, 119) !important;";
-        }).then(async () => {
+        })
+        /*
+        .then(async () => {
             await import("/routes/route4/chat.js").then(module => {
                 module.chat();  // Llamamos al método 'chat' directamente
             });
         }).catch(error => console.error("Error al cargar la página:", error));
-
+        */
     } catch (error) {
         console.error("Hubo un error:", error);
     }
