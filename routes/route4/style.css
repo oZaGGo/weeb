@@ -109,13 +109,12 @@
 }
 
 .bubbleIa{
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: rgb(255, 255, 255) !important;
+    color: black !important;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
     font-family: "SquareFont";
-    color: white;
     max-width: 50%;
     word-wrap: break-word;
     margin-right: 95%;
