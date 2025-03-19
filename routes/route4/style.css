@@ -117,3 +117,6 @@
     word-wrap: break-word;
 }
 
+#content{
+    z-index: 10;
+}
