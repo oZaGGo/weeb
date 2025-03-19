@@ -68,7 +68,7 @@ route4.addEventListener("click", async function () {
             console.error("Hubo un error al obtener la API key:", error);
         });
 
-    await loadPage(event, "./routes/route4/index.html");
+    loadPage(event, "./routes/route4/index.html");
 
     //Import javascript
     const importJs = await import("/routes/route4/chat.js");
