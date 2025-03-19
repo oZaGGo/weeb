@@ -3,18 +3,24 @@
     src: url('../../fonts/nothing.ttf') format('truetype');
 }
 
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16vh;
+}
+
 
 .chat{
-    width: 70vw;
+    width: 70%;
     height: 70vh;
-    position: absolute;
     background-color: rgba(255, 255, 255, 0.075);
     backdrop-filter: blur(3px);
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.13);
-    margin-top: 15vh;
-    margin-left: 31vh;
     animation: fadeIn 1s ease;
     display: flex;
     flex-direction: column;
@@ -38,23 +44,18 @@
     width: 100%;
     height: 8vh;
     justify-content: center;
-    margin-bottom: 1vh;
     pointer-events: fill;
 }
 
 #inputBlock{
+    margin-top: -10vh;
+    width: 70%;
     background-color: transparent;
-    display: flex;
-    width: 70vw;
-    height: 70vh;
-    position: absolute;
-    margin-top: 15vh;
-    margin-left: 31vh;
+    animation: fadeIn 1s ease;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    animation: fadeIn 1s ease;
-    pointer-events: none;
+    justify-content: center;
+    align-items: end;
     z-index: 2;
 }
 
