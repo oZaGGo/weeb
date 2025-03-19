@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Diaz Miragaya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <?php include 'background/background.php'; ?>
+
+    <?php include 'header/header.php'; ?>
+
+    <?php include 'background/social/social.php'; ?>
+
+
+    <!--Dynamic body-->
+
+    <div id="content"></div>
+
+    <!-- Scripts -->
+    <script src="recyclable/data.js"></script>
+    <script src="recyclable/dynamicView.js"></script>
+    <script src="ia/api.js"></script>
+</body>
+
+</html>
