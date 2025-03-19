@@ -12,11 +12,11 @@
 
 <body>
 
-    <?php include 'background/background.php'; ?>
+    <?php include '../../background/background.php'; ?>
 
-    <?php include 'header/header.php'; ?>
+    <?php include '../../header/header.php'; ?>
 
-    <?php include 'background/social/social.php'; ?>
+    <?php include '../../background/social/social.php'; ?>
 
     <div class="chat">
         <div id="bubbles" class="bubbles"></div>
