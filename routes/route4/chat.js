@@ -11,20 +11,24 @@ sendButton.addEventListener('click', async function () {
 
     //User bubble message
     message = chatInput.value;
-    const newMessage = document.createElement('div');
-    newMessage.classList.add('bubble');
-    newMessage.textContent = message;
-    bubbles.appendChild(newMessage);
-    chatInput.value = "";
+    if (message === "") {
+        return;
+    } else {
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('bubble');
+        newMessage.textContent = message;
+        bubbles.appendChild(newMessage);
+        chatInput.value = "";
 
-    //IA response
-    apikey = localStorage.getItem('key');
-    const newIaMessage = document.createElement('div');
-    newIaMessage.classList.add('bubbleIa');
-    newIaMessage.textContent = "Typing...";
-    bubbles.appendChild(newIaMessage);
-    iaResponse = await getCompletion(message, apikey);
-    newIaMessage.textContent = iaResponse;
+        //IA response
+        apikey = localStorage.getItem('key');
+        const newIaMessage = document.createElement('div');
+        newIaMessage.classList.add('bubbleIa');
+        newIaMessage.textContent = "Typing...";
+        bubbles.appendChild(newIaMessage);
+        iaResponse = await getCompletion(message, apikey);
+        newIaMessage.textContent = iaResponse;
+    }
 
 });
 
