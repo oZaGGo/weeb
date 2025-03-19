@@ -2,7 +2,7 @@ let bubbles = document.getElementById("bubbles")
 let sendButton = document.getElementById('sendButton')
 let apikey = localStorage.getItem('key');
 
-let route4 = document.getElementById("route4")
+//Change color of route4
 route4.style = "color: rgb(255, 0, 119) !important;"
 
 console.log(apikey);
