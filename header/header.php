@@ -12,5 +12,3 @@
         <img id="githubAvatar" class="githubAvatar" src="https://avatars.githubusercontent.com/u/113898233?v=4">
     </div>
 </div>
-
-<script src="header/nav.js"></script>
