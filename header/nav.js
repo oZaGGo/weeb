@@ -59,6 +59,15 @@ let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", async function (event) {
     try {
+        fetch('../sql/key.php')
+         .then(response => response.text())
+         .then(data => {
+             apiKey = data;
+             console.log("API Key:", apiKey);
+         })
+         .catch(error => {
+             console.error("Hubo un error al obtener la API key:", error);
+         });
         //Load routes/route4/index.html
         window.location.href = "routes/route4/index.php"
     } catch (error) {
