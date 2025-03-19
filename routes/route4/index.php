@@ -15,6 +15,8 @@
     <!-- Audio -->
     <audio id="clac" src="../../audio/sounds/low_clac3.wav"></audio>
     <audio id="rain" src="../../audio/background-sounds/rain.wav"></audio>
+    <audio id="sendSound" src="../../audio/sounds/send.wav"></audio>
+    <audio id="reciveSound" src="../../audio/sounds/recive.wav"></audio>
 
     <?php include '../../background/background.php'; ?>
 
