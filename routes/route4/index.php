@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Diaz Miragaya</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./routes/route4/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -30,9 +30,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="recyclable/data.js"></script>
-    <script src="recyclable/dynamicView.js"></script>
-    <script src="ia/api.js"></script>
+    <script src="../../recyclable/data.js"></script>
+    <script src="../../recyclable/dynamicView.js"></script>
+    <script src="../../ia/api.js"></script>
 </body>
 
 </html>
