@@ -59,18 +59,18 @@ let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", async function (event) {
     try {
-        /*
-        const response = await fetch('../sql/key.php');
-        apiKey = await response.text();
-        console.log("API Key:", apiKey);
-        */
+        fetch('../sql/key.php').then(response => response.text()).then(data => {
+            apikey = data
 
-        loadPage(event, "./routes/route4/index.html")
+            console.log(apikey)
+            
+            loadPage(event, "./routes/route4/index.html")
 
-        const importJs = await import("/routes/route4/chat.js");
-        importJs.chat();
+            const importJs = import("/routes/route4/chat.js");
+            importJs.chat();
 
-        route4.style = "color: rgb(255, 0, 119) !important;";
+            route4.style = "color: rgb(255, 0, 119) !important;";
+        })
 
     } catch (error) {
         console.error("Hubo un error:", error);
