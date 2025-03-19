@@ -59,25 +59,19 @@ let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", async function (event) {
     try {
-        // 1️⃣ Esperar la respuesta de fetch
+        /*
         const response = await fetch('../sql/key.php');
         apiKey = await response.text();
         console.log("API Key:", apiKey);
+        */
 
-        // 2️⃣ Cargar la página de forma síncrona
-        await loadPage(event, "./routes/route4/index.html");
+        loadPage(event, "./routes/route4/index.html")
 
-        // 4️⃣ Obtener los elementos después de que la página haya cargado
-        let bubbles = document.getElementById("bubbles");
-        let sendButton = document.getElementById('sendButton');
-
-        // 3️⃣ Importar el JavaScript de forma asíncrona
         const importJs = await import("/routes/route4/chat.js");
         importJs.chat();
 
-        // 5️⃣ Cambiar el estilo del botón
         route4.style = "color: rgb(255, 0, 119) !important;";
-        
+
     } catch (error) {
         console.error("Hubo un error:", error);
     }

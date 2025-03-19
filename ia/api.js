@@ -20,8 +20,8 @@ async function getCompletion(message, apiKey) {
             throw new Error(`Error ${response.status}: ${await response.text()}`);
         }
 
-        const data = await response.json();
-        console.log("Respuesta de OpenAI:", data.choices[0].message.content);
+        let data = await response.json();
+        return data.choices[0].message.content;
     } catch (error) {
         console.error("Error en la petición:", error.message);
     }

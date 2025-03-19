@@ -1,9 +1,12 @@
 export function chat() {
 
-    sendButton.addEventListener('click', function () {
+    let bubbles = document.getElementById("bubbles")
+    let sendButton = document.getElementById('sendButton')
+
+    sendButton.addEventListener('click',async function () {
 
         //User bubble message
-        const message = chatInput.value;
+        message = chatInput.value;
         const newMessage = document.createElement('div');
         newMessage.classList.add('bubble');
         newMessage.textContent = message;
@@ -12,10 +15,10 @@ export function chat() {
 
         //IA response
 
-        let iaMessage = getCompletion(message, apiKey);
+        iaResponse = await getCompletion(message, apikey);
         const newIaMessage = document.createElement('div');
         newIaMessage.classList.add('bubbleIa');
-        newIaMessage.textContent = iaMessage;
+        newIaMessage.textContent = iaResponse;
         bubbles.appendChild(newIaMessage);
 
     });

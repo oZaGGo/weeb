@@ -1,1 +1,3 @@
-let apikey = "";
+let apikey = "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"
+let message
+let iaResponse
