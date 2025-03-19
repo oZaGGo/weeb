@@ -59,22 +59,8 @@ let route4 = document.getElementById("route4")
 
 route4.addEventListener("click", async function (event) {
     try {
-        fetch('../sql/key.php').then(response => response.text()).then(data => {
-            apikey = data
-
-            console.log(apikey)
-
-            loadPage(event, "./routes/route4/index.html")
-
-            route4.style = "color: rgb(255, 0, 119) !important;";
-        })
-        /*
-        .then(async () => {
-            await import("/routes/route4/chat.js").then(module => {
-                module.chat();  // Llamamos al método 'chat' directamente
-            });
-        }).catch(error => console.error("Error al cargar la página:", error));
-        */
+        //Load routes/route4/index.html
+        window.location.href = "routes/route4/index.php"
     } catch (error) {
         console.error("Hubo un error:", error);
     }
