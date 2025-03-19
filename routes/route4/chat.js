@@ -19,11 +19,12 @@ sendButton.addEventListener('click', async function () {
 
     //IA response
     apikey = localStorage.getItem('key');
-    iaResponse = await getCompletion(message, apikey);
     const newIaMessage = document.createElement('div');
     newIaMessage.classList.add('bubbleIa');
-    newIaMessage.textContent = iaResponse;
+    newIaMessage.textContent = "Typing...";
     bubbles.appendChild(newIaMessage);
+    iaResponse = await getCompletion(message, apikey);
+    newIaMessage.textContent = iaResponse;
 
 });
 
