@@ -15,6 +15,8 @@ sendButton.addEventListener('click', async function () {
 
     //IA response
 
+    let apikey = localStorage.getItem('key');
+
     iaResponse = await getCompletion(message, apikey);
     const newIaMessage = document.createElement('div');
     newIaMessage.classList.add('bubbleIa');
