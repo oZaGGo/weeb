@@ -2,6 +2,8 @@ let bubbles = document.getElementById("bubbles")
 let sendButton = document.getElementById('sendButton')
 let apikey = localStorage.getItem('key');
 
+console.log(apikey);
+
 sendButton.addEventListener('click', async function () {
 
     //User bubble message
@@ -13,7 +15,6 @@ sendButton.addEventListener('click', async function () {
     chatInput.value = "";
 
     //IA response
-
     apikey = localStorage.getItem('key');
     iaResponse = await getCompletion(message, apikey);
     const newIaMessage = document.createElement('div');
