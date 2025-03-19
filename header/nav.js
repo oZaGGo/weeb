@@ -58,7 +58,8 @@ document.addEventListener("mousemove", async function socialBoard(event) {
 function loadPage(event, page) {
     event.preventDefault();
 
-    fetch('../sql/key.php') // Llamamos al archivo PHP que devuelve la API key 
+    fetch('../sql/key.php') // Llamamos al archivo PHP que devuelve la API key
+        .then(response => response.text())
         .then(data => {
             // Almacenamos el valor de la API key en una variable JS
             var apiKey = data;
