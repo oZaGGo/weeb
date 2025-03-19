@@ -26,6 +26,9 @@
     <script src="recyclable/data.js"></script>
     <script src="recyclable/dynamicView.js"></script>
     <script src="ia/api.js"></script>
+    <script src="background/background-script.js"></script>
+    <script src="audio/audio-manager.js"></script>
+    <script src="header/nav.js"></script>
 </body>
 
 </html>
