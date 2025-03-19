@@ -67,8 +67,6 @@ route4.addEventListener("click", async function (event) {
         // 2️⃣ Cargar la página de forma síncrona
         await loadPage(event, "./routes/route4/index.html");
 
-        /*
-
         // 4️⃣ Obtener los elementos después de que la página haya cargado
         let bubbles = document.getElementById("bubbles");
         let sendButton = document.getElementById('sendButton');
@@ -79,7 +77,7 @@ route4.addEventListener("click", async function (event) {
 
         // 5️⃣ Cambiar el estilo del botón
         route4.style = "color: rgb(255, 0, 119) !important;";
-        */
+        
     } catch (error) {
         console.error("Hubo un error:", error);
     }
